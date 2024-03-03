@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <ul class="nav-links">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" onclick="toggleBlog()" class="nav-link">Blog</a>
+            <ul id="blogPosts" style="display: none;">
+                <li><a href="post1.html" class="blog-link">Post Title 1</a></li>
+                <li><a href="post2.html" class="blog-link">Post Title 2</a></li>
+                <!-- Add more list items for additional blog posts if needed -->
+            </ul>
+        </li>
+    </ul>
+    <section id="content">
+        <h2 class="blog-heading">Latest Blog Posts</h2>
+        <article>
+            <h3 class="post-title"><a href="post1.html" class="post-link">1. The Psychology of the Past </a></h3>
+            <p class="post-content"> Dejavu can also be called as:</p>
+        </article>
+        <article>
+            <h3 class="post-title"><a href="post2.html" class="post-link">2. Post Title 2</a></h3>
+            <p class="post-content">This is the content of another blog post.</p>
+        </article>
+        <!-- Add more articles for additional blog posts if needed -->
+
+        <!-- For Video -->
+        <video width="100%" controls>
+            <source src="myvideo1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <style>
+        /* General Styles */
+        .nav-links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .nav-item {
+            display: inline-block;
+        }
+
+        .nav-link {
+            color: #6e7375;
+            font-size: 1.2em;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .nav-link:hover {
+            color: #bbc3c9;
+        }
+
+        /* Blog Section Styles */
+        .blog-heading {
+            color: #a2ac22;
+            font-family: 'Bahnschrift SemiLight', serif;
+            font-size: 3.5em;
+            text-align: center;
+        }
+
+        .blog-link {
+            color: #0a0d0f;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .blog-link:hover {
+            color: #a2ac22;
+        }
+
+        .post-title {
+            color: #333;
+            font-size: 1.8em;
+            text-align: left;
+        }
+
+        .post-link {
+            color: #070808;
+            text-decoration: none;
+        }
+
+        .post-link:hover {
+            color: #a2ac22;
+        }
+
+        .post-content {
+            color: #555;
+            font-size: 1.2em;
+            text-align: left;
+        }
+    </style>
+
+    <script>
+         function toggleBlog() {
+        var blogPosts = document.getElementById("blogPosts");
+        
+        // Check if the current page is the blog page
+        var isBlogPage = window.location.pathname.includes("blog.html");
+        
+        // Toggle the visibility only if it's not the blog page
+        if (!isBlogPage) {
+            blogPosts.style.display = (blogPosts.style.display === "block") ? "none" : "block";
+        }
+    }
+    
+    // Ensure that the blog list is hidden by default
+    window.onload = function () {
+        var blogPosts = document.getElementById("blogPosts");
+        blogPosts.style.display = "none";
+    }
+    </script>
+</body>
+</html>
