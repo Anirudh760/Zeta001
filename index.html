@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <!-- Navigation Links -->
     <nav>
         <ul>
@@ -20,7 +19,20 @@
 
     <!-- Hello, World! Section -->
     <section class="hello-box">
-        <h1 class="hello-text"><span class="beyond-earth">BEYOND EARTH</span><br><span class="future-humanity">THE FUTURE OF HUMANITY IN SPACE</span></h1>
+        <h1 class="hello-text">
+            <span class="beyond-earth">BEYOND MY ROOM</span><br>
+            <span class="future-humanity">TYPICALLY MY THOUGHTS TOWARDS THINGS</span>
+        </h1>
+    </section>
+
+    <!-- Small Paragraph Section -->
+    <section class="paragraph-box">
+        <div class="paragraph-container">
+            <p class="paragraph-text">
+                This website is all about the my thoughts and my POV to things which i want to express and store it somewhere. So its typically unprofressional. This can be purely logical or illogical so try to understand it by reading it first then 
+                contemplate byurself. I mean first try to undertand what i have to say then say its wrong  or right. <br>THANK YOU
+            </p>
+        </div>
     </section>
 
     <!-- Image Section -->
@@ -45,8 +57,17 @@
 
     <!-- Contact Information -->
     <section class="contact-info">
-        <p><a href="https://www.instagram.com/ani_osho_" target="_blank"><img src="instagram_icon.png" alt="Instagram Logo"></a></p>
+        <p>
+            <a href="https://www.instagram.com/ani_osho_" target="_blank">
+                <img src="instagram_icon.png" alt="Instagram Logo">
+            </a>
+        </p>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SHOBHIT SHARMA.</p>
+    </footer>
 
     <style>
         /* General Styles */
@@ -58,34 +79,52 @@
             padding: 0;
         }
 
+        /* Navbar Styles */
+        nav {
+            background-color: #0d0e0c;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
         ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            background-color: #0d0e0c;
         }
 
         ul li {
             display: inline-block;
             margin-right: 20px;
-            
         }
 
         .nav-link {
             color: #e5edf0;
-            font-size: 1.5em;
+            font-size: 1.2em;
             text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #3498db;
         }
 
         /* Hello, World! Styles */
         .hello-box {
             text-align: center;
-            margin-bottom: 20px;
-            margin-top: 20px;
+            padding: 100px 20px;
+            background-color: #f1f1ed;
         }
 
         .hello-text {
             margin: 0;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .beyond-earth {
@@ -104,58 +143,113 @@
             display: block;
         }
 
+        /* Paragraph Box Styles */
+        .paragraph-box {
+            padding: 20px;
+            background-color: #ffffff;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .paragraph-text {
+            color: #555;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin: 0;
+        }
+
         /* Image Styles */
         .image-box {
             text-align: center;
+            padding: 20px;
         }
 
         .header-image {
             width: 100%;
             height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Quote Styles */
         .quote-box {
-            background-color: #0ca3c9;
-            padding: 20px;
+            background-image: url('space-background.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
             text-align: center;
             margin-top: 20px;
         }
 
         .quote-text {
             font-family: 'Cascadia Code Light', monospace;
-            color: #080707;
-            font-size: 2.5em;
+            color: #ffffff;
+            font-size: 2em;
+            line-height: 1.6;
             margin: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
         }
 
         /* Video Styles */
         .video-box {
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Contact Information Styles */
         .contact-info {
             text-align: center;
-            margin-top: 20px;
+            padding: 20px;
+            background-color: #0d0e0c;
+            margin-top: 40px;
         }
 
-        /* Optional: Style for Instagram Logo */
         .contact-info img {
-            width: 50px;
+            width: 40px;
             height: auto;
+            margin: 0 10px;
+            transition: transform 0.3s;
         }
 
-        /* Mobile Responsiveness Styles */
-        @media (max-width: 600px) {
-            ul {
-                text-align: center;
-            }
+        .contact-info img:hover {
+            transform: scale(1.2);
+        }
 
+        /* Footer Styles */
+        footer {
+            background-color: #0d0e0c;
+            color: #e5edf0;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
             ul li {
                 display: block;
                 margin-bottom: 10px;
+            }
+
+            .nav-link {
+                font-size: 1em;
             }
 
             .hello-text {
@@ -165,6 +259,14 @@
             .beyond-earth,
             .future-humanity {
                 font-size: 1.5em;
+            }
+
+            .paragraph-box {
+                padding: 15px;
+            }
+
+            .paragraph-text {
+                font-size: 1em;
             }
         }
     </style>
