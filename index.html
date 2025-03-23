@@ -4,12 +4,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Beyond My Room</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            background: #0d0e0c;
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            color: #e5edf0;
+            font-size: 1.2em;
+            text-decoration: none;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: "";
+            width: 0;
+            height: 2px;
+            background: #a2ac22;
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transition: width 0.3s, left 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #a2ac22;
+        }
+
+        /* Hero Section */
+        .hello-box {
+            text-align: center;
+            padding: 120px 20px;
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            color: white;
+        }
+
+        .beyond-earth {
+            font-weight: 700;
+            font-size: 3.5em;
+            display: block;
+        }
+
+        .future-humanity {
+            font-weight: 400;
+            font-size: 1.5em;
+            display: block;
+        }
+
+        /* Paragraph Section */
+        .paragraph-box {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .paragraph-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        /* Image Section */
+        .image-box {
+            margin-top: 30px;
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Quote Section */
+        .quote-box {
+            background: url('space-background.jpg') center/cover no-repeat;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .quote-text {
+            position: relative;
+            z-index: 2;
+            font-size: 2em;
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Video Section */
+        .video-box {
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            text-align: center;
+            padding: 20px;
+            background: #0d0e0c;
+        }
+
+        .contact-info img {
+            width: 40px;
+            transition: transform 0.3s;
+        }
+
+        .contact-info img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        footer {
+            background: #0d0e0c;
+            color: #e5edf0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-link {
+                font-size: 1em;
+            }
+
+            .hello-box {
+                padding: 80px 20px;
+            }
+
+            .beyond-earth {
+                font-size: 2.5em;
+            }
+
+            .future-humanity {
+                font-size: 1.2em;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation Links -->
+
+    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html" class="nav-link">Home</a></li>
@@ -17,7 +208,7 @@
         </ul>
     </nav>
 
-    <!-- Hello, World! Section -->
+    <!-- Hero Section -->
     <section class="hello-box">
         <h1 class="hello-text">
             <span class="beyond-earth">BEYOND MY ROOM</span><br>
@@ -25,14 +216,11 @@
         </h1>
     </section>
 
-    <!-- Small Paragraph Section -->
+    <!-- Paragraph Section -->
     <section class="paragraph-box">
-        <div class="paragraph-container">
-            <p class="paragraph-text">
-                This website is all about the my thoughts and my POV to things which i want to express and store it somewhere. So its typically unprofressional. This can be purely logical or illogical so try to understand it by reading it first then 
-                contemplate byurself. I mean first try to undertand what i have to say then say its wrong  or right. <br>THANK YOU
-            </p>
-        </div>
+        <p class="paragraph-text">
+            This website is all about my thoughts and my POV on things that I want to express and store somewhere. So it's typically unprofessional. These can be purely logical or illogical, so try to understand them first, then contemplate yourself. First, try to understand what I have to say, then decide if it's wrong or right.<br><br>THANK YOU
+        </p>
     </section>
 
     <!-- Image Section -->
@@ -43,7 +231,7 @@
     <!-- Quote Section -->
     <section class="quote-box">
         <blockquote class="quote-text">
-            "Closed in a room, my imagination<br>becomes the universe, and the rest<br>of the world is missing out."
+            "Closed in a room, my imagination becomes the universe, and the rest of the world is missing out."
         </blockquote>
     </section>
 
@@ -55,13 +243,11 @@
         </video>
     </section>
 
-    <!-- Contact Information -->
+    <!-- Contact Section -->
     <section class="contact-info">
-        <p>
-            <a href="https://www.instagram.com/ani_osho_" target="_blank">
-                <img src="instagram_icon.png" alt="Instagram Logo">
-            </a>
-        </p>
+        <a href="https://www.instagram.com/ani_osho_" target="_blank">
+            <img src="instagram_icon.png" alt="Instagram Logo">
+        </a>
     </section>
 
     <!-- Footer -->
@@ -69,207 +255,5 @@
         <p>&copy; 2025 SHOBHIT SHARMA.</p>
     </footer>
 
-    <style>
-        /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #f1f1ed;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Navbar Styles */
-        nav {
-            background-color: #0d0e0c;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .nav-link {
-            color: #e5edf0;
-            font-size: 1.2em;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: #3498db;
-        }
-
-        /* Hello, World! Styles */
-        .hello-box {
-            text-align: center;
-            padding: 100px 20px;
-            background-color: #f1f1ed;
-        }
-
-        .hello-text {
-            margin: 0;
-            animation: fadeIn 2s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .beyond-earth {
-            font-family: 'Bodoni MT Black', serif;
-            color: #a2ac22;
-            font-size: 3.5em;
-            font-weight: bold;
-            display: block;
-        }
-
-        .future-humanity {
-            font-family: 'Bell MT', serif;
-            color: #3498db;
-            font-size: 1.5em;
-            font-style: normal;
-            display: block;
-        }
-
-        /* Paragraph Box Styles */
-        .paragraph-box {
-            padding: 20px;
-            background-color: #ffffff;
-            margin: 20px auto;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .paragraph-text {
-            color: #555;
-            font-size: 1.2em;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Image Styles */
-        .image-box {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .header-image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Quote Styles */
-        .quote-box {
-            background-image: url('space-background.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 60px 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .quote-text {
-            font-family: 'Cascadia Code Light', monospace;
-            color: #ffffff;
-            font-size: 2em;
-            line-height: 1.6;
-            margin: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        /* Video Styles */
-        .video-box {
-            margin: 40px auto;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Contact Information Styles */
-        .contact-info {
-            text-align: center;
-            padding: 20px;
-            background-color: #0d0e0c;
-            margin-top: 40px;
-        }
-
-        .contact-info img {
-            width: 40px;
-            height: auto;
-            margin: 0 10px;
-            transition: transform 0.3s;
-        }
-
-        .contact-info img:hover {
-            transform: scale(1.2);
-        }
-
-        /* Footer Styles */
-        footer {
-            background-color: #0d0e0c;
-            color: #e5edf0;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 600px) {
-            ul li {
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            .nav-link {
-                font-size: 1em;
-            }
-
-            .hello-text {
-                font-size: 1.8em;
-            }
-
-            .beyond-earth,
-            .future-humanity {
-                font-size: 1.5em;
-            }
-
-            .paragraph-box {
-                padding: 15px;
-            }
-
-            .paragraph-text {
-                font-size: 1em;
-            }
-        }
-    </style>
 </body>
-
 </html>

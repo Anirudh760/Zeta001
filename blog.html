@@ -1,125 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Beyond Earth</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f1f1ed;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
             color: #333;
         }
 
-        /* Navigation Bar Styles */
-        .nav-links {
-            list-style-type: none;
-            margin: 0;
-            padding: 20px;
-            background-color: #0d0e0c;
-            text-align: center;
-        }
-
-        .nav-item {
-            display: inline-block;
-            margin: 0 15px;
+        /* Navbar Styles */
+        .navbar {
+            background: #0d0e0c;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .nav-link {
             color: #e5edf0;
             font-size: 1.2em;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #3498db;
+            color: #a2ac22;
         }
 
-        /* Blog Section Styles */
+        /* Blog Content */
         #content {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 50px auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         }
 
         .blog-heading {
-            color: #a2ac22;
-            font-family: 'Bahnschrift SemiLight', serif;
-            font-size: 3em;
+            color: #4b5d16;
+            font-size: 2.5em;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
-        article {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #e0e0e0;
+        /* Blog Post Cards */
+        .blog-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
         }
 
         .post-title {
-            color: #0d0e0c;
-            font-size: 2em;
+            font-size: 1.8em;
+            color: #222;
             margin-bottom: 10px;
         }
 
-        .post-link {
-            color: #0d0e0c;
+        .post-title a {
             text-decoration: none;
-            transition: color 0.3s;
+            color: inherit;
+            transition: color 0.3s ease;
         }
 
-        .post-link:hover {
+        .post-title a:hover {
             color: #a2ac22;
         }
 
         .post-content {
-            color: #555;
             font-size: 1.1em;
+            color: #555;
             line-height: 1.6;
         }
 
         .post-meta {
-            color: #777;
             font-size: 0.9em;
+            color: #777;
             margin-top: 10px;
         }
 
-        /* Video Section Styles */
-        video {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 40px;
+        /* CTA Button */
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: #4b5d16;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background 0.3s ease;
         }
 
-        /* Footer Styles */
+        .read-more:hover {
+            background: #6a8324;
+        }
+
+        /* Footer */
         footer {
-            background-color: #0d0e0c;
+            background: #0d0e0c;
             color: #e5edf0;
             text-align: center;
             padding: 20px;
             margin-top: 40px;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-        }
-
         /* Responsive Design */
-        @media (max-width: 600px) {
-            .nav-item {
-                display: block;
-                margin: 10px 0;
+        @media (max-width: 768px) {
+            .navbar {
+                gap: 20px;
             }
 
             .blog-heading {
@@ -129,51 +140,41 @@
             .post-title {
                 font-size: 1.5em;
             }
-
-            #content {
-                padding: 10px;
-            }
         }
     </style>
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <ul class="nav-links">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-    </ul>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+    </nav>
 
     <!-- Blog Content -->
     <section id="content">
         <h2 class="blog-heading">Blog Posts</h2>
 
         <!-- Blog Post 1 -->
-        <article>
-            <h3 class="post-title"><a href="post1.html" class="post-link">ENLIGHTENMENT</a></h3>
-            <p class="post-content">Try reading it even though its boring.</p>
+        <div class="blog-card" onclick="location.href='post1.html';">
+            <h3 class="post-title"><a href="post1.html">ENLIGHTENMENT</a></h3>
+            <p class="post-content">Try reading it even though it's boring.</p>
             <p class="post-meta">Published on Feb 28, 2025</p>
-        </article>
+            <a href="post1.html" class="read-more">Read More</a>
+        </div>
 
         <!-- Blog Post 2 -->
-        <article>
-            <h3 class="post-title"><a href="post2.html" class="post-link">searching</a></h3>
+        <div class="blog-card" onclick="location.href='post2.html';">
+            <h3 class="post-title"><a href="post2.html">searching</a></h3>
             <p class="post-content">....</p>
             <p class="post-meta">Published on near future</p>
-        </article>
-
-        <!-- Add more blog posts as needed -->
-
-        <!-- Video Section -->
-        <video width="100%" controls>
-            <source src="myvideo1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+            <a href="post2.html" class="read-more">Read More</a>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Beyond Earth. All rights reserved.</p>
+        <p>&copy; 2025 Beyond Earth. All rights reserved.</p>
     </footer>
 </body>
 
