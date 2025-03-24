@@ -10,15 +10,40 @@
         /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #faf9fa;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Video Background */
+        #bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Overlay to Darken Video */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Darkens background */
+            z-index: 0;
         }
 
         /* Navbar Styles */
         .navbar {
-            background: #0d0e0c;
+            background: rgba(13, 14, 12, 0.8); /* Slightly transparent */
             padding: 15px 20px;
             display: flex;
             justify-content: center;
@@ -27,6 +52,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
         }
 
         .nav-link {
@@ -43,15 +69,19 @@
         /* Blog Content */
         #content {
             max-width: 900px;
-            margin: 50px auto;
+            width: 90%;
+            margin: 80px auto;
             padding: 20px;
-            background-color: #177d8f;
+            background-color: rgba(23, 125, 143, 0.9); /* Semi-transparent */
             border-radius: 12px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1;
+            position: relative;
         }
 
         .blog-heading {
-            color: #050504;
+            color: #fff;
             font-size: 2.5em;
             text-align: center;
             margin-bottom: 30px;
@@ -59,13 +89,14 @@
 
         /* Blog Post Cards */
         .blog-card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            text-align: center; /* Center-align text */
         }
 
         .blog-card:hover {
@@ -120,11 +151,12 @@
 
         /* Footer */
         footer {
-            background: #0d0e0c;
+            background: rgba(13, 14, 12, 0.8);
             color: #e5edf0;
             text-align: center;
             padding: 20px;
             margin-top: 40px;
+            width: 100%;
         }
 
         /* Responsive Design */
@@ -145,6 +177,17 @@
 </head>
 
 <body>
+
+    <!-- Video Background -->
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="video/background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+
+    <!-- Overlay to Darken the Video -->
+    <div class="overlay"></div>
+
     <!-- Navigation Bar -->
     <nav class="navbar">
         <a href="index.html" class="nav-link">Home</a>
@@ -153,7 +196,7 @@
 
     <!-- Blog Content -->
     <section id="content">
-        <h2 class="blog-heading">BlOG POSTS</h2>
+        <h2 class="blog-heading">BLOG POSTS</h2>
 
         <!-- Blog Post 1 -->
         <div class="blog-card" onclick="location.href='post1.html';">
@@ -165,7 +208,7 @@
 
         <!-- Blog Post 2 -->
         <div class="blog-card" onclick="location.href='post2.html';">
-            <h3 class="post-title"><a href="post2.html">searching</a></h3>
+            <h3 class="post-title"><a href="post2.html">SEARCHING</a></h3>
             <p class="post-content">....</p>
             <p class="post-meta">Published on near future</p>
             <a href="post2.html" class="read-more">Read More</a>
@@ -176,6 +219,6 @@
     <footer>
         <p>&copy; 2025 Beyond Earth. All rights reserved.</p>
     </footer>
-</body>
 
+</body>
 </html>

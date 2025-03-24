@@ -24,9 +24,9 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         ul {
@@ -35,7 +35,7 @@
             padding: 0;
             display: flex;
             gap: 40px;
-            flex-wrap: nowrap; /* Prevents wrapping */
+            flex-wrap: nowrap;
             justify-content: center;
         }
 
@@ -46,7 +46,7 @@
             position: relative;
             padding: 5px 0;
             transition: color 0.3s;
-            white-space: nowrap; /* Prevents breaking into new lines */
+            white-space: nowrap;
         }
 
         .nav-link::after {
@@ -183,14 +183,14 @@
             }
 
             ul {
-                flex-direction: row; /* Ensures items remain in a row */
-                gap: 20px; /* Adjust spacing */
+                flex-direction: row;
+                gap: 20px;
                 padding: 0;
             }
 
             .nav-link {
                 font-size: 1em;
-                white-space: nowrap; /* Prevents wrapping */
+                white-space: nowrap;
             }
 
             .hello-box {
@@ -248,7 +248,7 @@
     <!-- Video Section -->
     <section class="video-box">
         <video width="100%" controls>
-            <source src="myvideo.mp4" type="video/mp4">
+            <source src="video/myvideo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </section>
