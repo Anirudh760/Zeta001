@@ -35,6 +35,8 @@
             padding: 0;
             display: flex;
             gap: 40px;
+            flex-wrap: nowrap; /* Prevents wrapping */
+            justify-content: center;
         }
 
         .nav-link {
@@ -44,6 +46,7 @@
             position: relative;
             padding: 5px 0;
             transition: color 0.3s;
+            white-space: nowrap; /* Prevents breaking into new lines */
         }
 
         .nav-link::after {
@@ -174,13 +177,20 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            nav {
+                display: flex;
+                justify-content: center;
+            }
+
             ul {
-                flex-direction: column;
-                gap: 10px;
+                flex-direction: row; /* Ensures items remain in a row */
+                gap: 20px; /* Adjust spacing */
+                padding: 0;
             }
 
             .nav-link {
                 font-size: 1em;
+                white-space: nowrap; /* Prevents wrapping */
             }
 
             .hello-box {
