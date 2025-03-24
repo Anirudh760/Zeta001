@@ -96,7 +96,7 @@
             margin-bottom: 20px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
-            text-align: center; /* Center-align text */
+            text-align: center;
         }
 
         .blog-card:hover {
@@ -179,11 +179,11 @@
 <body>
 
     <!-- Video Background -->
-    <video autoplay loop muted playsinline>
-        <source src="docs/background.mp4" type="video/mp4">
+    <video id="bg-video" autoplay loop muted playsinline>
+        <source src="video/background.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video>
-
+    </video>
+    
     <!-- Overlay to Darken the Video -->
     <div class="overlay"></div>
 
