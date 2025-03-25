@@ -3,56 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Title 2</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <article>
-        <h3 class="post-title">Post Title 2</h3>
-        <p class="post-content">
-            This is the content of my first blog post. You can write your detailed content here.
-        </p>
-        <a href="blog.html" class="back-link">Back </a>
-    </article>
-
+    <title>Hypotheses - Beyond My Room</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #6d6c6c;
             margin: 0;
             padding: 0;
+            color: #333;
         }
 
-        /* Blog Post Styles */
+        /* Blog Header with Video */
+        .blog-header {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .blog-header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Fallback if video doesn't load */
+        .blog-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Blog Post Section */
+        .post-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         .post-title {
-            color: #333;
-            font-size: 2em;
+            font-size: 2.5em;
+            font-weight: 700;
         }
 
         .post-content {
-            color: #555;
             font-size: 1.2em;
-            margin: 20px;
+            line-height: 1.6;
+            color: #444;
+            text-align: left;
         }
 
         .back-link {
             display: inline-block;
             margin-top: 20px;
-            margin-bottom: 10px;
             padding: 10px 20px;
             background-color: #a2ac22;
             color: #fff;
             font-size: 1.2em;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
 
         .back-link:hover {
             background-color: #7d8320;
         }
     </style>
+</head>
+<body>
+    <!-- Blog Header -->
+    <div class="blog-header">
+        <video autoplay muted loop>
+            <source src="video/background_post2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        HYPOTHESES
+    </div>
+
+    <!-- Blog Post Section -->
+    <section class="post-container">
+        <h1 class="post-title"></h1>
+        <p class="post-content">
+            A hypothesis is an idea proposed as a possible explanation for something, though it hasn't been proven yet. Sounds interesting, right?
+            <br><br>
+            I come up with many hypotheses about things I can't prove because I lack the scientific or mathematical expertise to validate them. This curiosity led me to study science, but I eventually abandoned that path. So, my hypotheses remained mine alone. In my later blogs, I'll share some of these thoughts. Right now, I'm simply trying to convince you, even though I can't prove them. They may or may not be true.
+            <br><br>
+            Many groundbreaking discoveries started as mere hypotheses—think of Albert Einstein (Relativity), Isaac Newton (Gravity), Nikola Tesla (AC Electricity, my favorite), Niels Bohr (Quantum Theory), and many more. What I’m trying to say is, I’m not asking you to believe in my theories blindly. I just want to put them out there.
+            <br><br>
+            The part I love most about hypotheses and discoveries is the uniqueness—an idea that no one in the past has even considered. Even if it can't be proven, the thought itself is worth something. And that’s why I created this blog—to express my thoughts, whether they make sense or not.
+            <br><br>
+            So yeah, stay tuned for my random and thought-provoking topics!
+            <br><br>
+            Thank you!
+        </p>
+        <a href="blog.html" class="back-link">Back</a>
+    </section>
 </body>
 </html>
